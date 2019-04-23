@@ -1,0 +1,6 @@
+node_modules
+output
+.idea
+.env
+tests_output
+*.log
