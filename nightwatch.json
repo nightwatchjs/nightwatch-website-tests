@@ -1,5 +1,6 @@
 {
   "src_folders": ["test"],
+  "custom_commands_path" : "lib/commands",
   "page_objects_path" : "lib/pages",
 
   "webdriver": {
