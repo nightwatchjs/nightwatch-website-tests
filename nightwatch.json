@@ -1,7 +1,8 @@
 {
   "src_folders": ["test"],
-  "custom_commands_path" : "lib/commands",
   "page_objects_path" : "lib/pages",
+  "custom_commands_path" : "lib/custom-commands",
+  "custom_assertions_path" : "lib/custom-assertions",
 
   "webdriver": {
     "start_process": true,

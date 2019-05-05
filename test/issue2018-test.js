@@ -2,19 +2,19 @@ module.exports = {
   before: function (client) {
     client.page.home().navigate();
   },
-  'Passing without page object provding Array': function (client) {
+  'Passing without page object providing Array': function (client) {
     const dataForCommand = ['foo'];
-    client.customCommand(dataForCommand);
+    client.customExecute(dataForCommand);
   },
-  'Passing with a sring': function (client) {
+  'Passing with a string': function (client) {
     const dataForCommand = 'foo';
     client.page.home()
-      .customCommand(dataForCommand);
+      .customExecute(dataForCommand);
   },
   'Failing with an Array': function (client) {
     const dataForCommand = ['foo']; // will also fail using object: { foo: 'bar' }
     client.page.home()
-      .customCommand(dataForCommand)
+      .customExecute(dataForCommand)
       .api.end();
   },
 };
