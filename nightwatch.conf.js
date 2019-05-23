@@ -1,3 +1,5 @@
+const chromedriver = require('chromedriver');
+
 module.exports = {
   src_folders: ['test'],
   page_objects_path : 'lib/pages',
@@ -23,11 +25,17 @@ module.exports = {
           acceptInsecureCerts: true
         }
       },
-      launch_url: 'http://nightwatchjs.org',
+
+      launch_url: 'https://nightwatchjs.org',
+
       globals: {
         // NIGHTWATCH_VERSION is defined as an environment variable (.env files are supported also)
         nightwatchVersion: '${NIGHTWATCH_VERSION}'
       }
+    },
+
+    firefox: {
+
     },
 
     safari: {
@@ -40,6 +48,16 @@ module.exports = {
       webdriver: {
         port: 4445,
         server_path: '/usr/bin/safaridriver'
+      }
+    },
+
+    chrome: {
+      desiredCapabilities : {
+        browserName : 'chrome'
+      },
+      webdriver: {
+        port: 9515,
+        server_path: chromedriver.path
       }
     }
   }

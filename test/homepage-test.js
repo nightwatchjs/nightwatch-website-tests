@@ -3,9 +3,8 @@ module.exports = {
     this.homepage = client.page.home();
   },
 
-  startHomepage: function() {
+  startHomepage: function(c) {
     this.homepage.navigate();
-
     this.homepage.expect.section('@indexContainer').to.be.visible;
   },
 
@@ -15,12 +14,6 @@ module.exports = {
 
     navbarHeader.expect.element('@versionDropdown').to.be.enabled;
     navbarHeader.expect.element('@versionDropdownOption:first-child').text.to.equal(client.globals.nightwatchVersion);
-  },
-
-  startHomepageAsync: async function (client) {
-    await client.openHomepage();
-
-    this.homepage.expect.section('@indexContainer').to.be.visible;
   },
 
   after(client) {
