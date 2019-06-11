@@ -34,10 +34,6 @@ module.exports = {
       }
     },
 
-    firefox: {
-
-    },
-
     safari: {
       desiredCapabilities : {
         browserName : 'safari',
@@ -53,8 +49,12 @@ module.exports = {
 
     chrome: {
       desiredCapabilities : {
-        browserName : 'chrome'
+        browserName : 'chrome',
+        chromeOptions: {
+          w3c: false
+        }
       },
+
       webdriver: {
         port: 9515,
         server_path: chromedriver.path
