@@ -16,7 +16,7 @@ module.exports = {
     client.expect.title().to.startWith('clearValue');
 
     this.apiMethodPage.section.container
-      .expect.element('@header').text.to.equal('.clearValue()');
+      .expect.element('@header').text.to.contain('.clearValue()');
   },
 
   after(client) {
