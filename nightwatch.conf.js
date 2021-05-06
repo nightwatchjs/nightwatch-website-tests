@@ -41,6 +41,11 @@ module.exports = {
         start_process: true,
         server_path: Services.geckodriver ? Services.geckodriver.path : '',
       },
+
+      globals: {
+        // NIGHTWATCH_VERSION is defined as an environment variable (.env files are supported also)
+        nightwatchVersion: '${NIGHTWATCH_VERSION}',
+      },
     },
 
     safari: {
