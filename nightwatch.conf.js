@@ -20,7 +20,15 @@ module.exports = {
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path: '',
 
-  webdriver: {},
+  webdriver: {
+    start_process: true,
+    port: 4444,
+    server_path: Services.geckodriver ? Services.geckodriver.path : '',
+    cli_args: [
+      // very verbose geckodriver logs
+      // '-vv'
+    ],
+  },
 
   test_settings: {
     default: {
