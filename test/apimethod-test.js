@@ -1,5 +1,4 @@
 module.exports = {
-  '@tags': ['vaibhav'],
   before(client) {
     this.apiPage = client.page.api.page();
     this.apiMethodPage = client.page.api.method.index();

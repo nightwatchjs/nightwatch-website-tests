@@ -15,7 +15,6 @@ module.exports = {
     client.assert.ok(key in topElementResult.value, `The Element Id ${key} is found in the result`);
 
     this.topElementId = elementID;
-    client.elementIdText(this.topElementId, (res) => console.log(res));
   },
 
   'check if elementIdElements works as expected': async function (client) {
@@ -29,8 +28,11 @@ module.exports = {
 
   'check if elementIdElement (single) works as expected': async function (client) {
     const dropdownResult = await client.elementIdElement(this.topElementId, 'css selector', 'a[class="dropdown-item"]');
+
+    let key = Object.keys(dropdownResult.value)[0];
+
     client.assert.ok(
-      client.WEBDRIVER_ELEMENT_ID in dropdownResult.value,
+      key in dropdownResult.value,
       `The Webdriver Element Id ${client.WEBDRIVER_ELEMENT_ID} is found in the dropdown result`
     );
   },
