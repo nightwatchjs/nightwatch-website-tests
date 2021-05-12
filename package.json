@@ -7,14 +7,13 @@
     "test": "cross-env NIGHTWATCH_VERSION=1.6.3 nightwatch",
     "test-safari": "cross-env NIGHTWATCH_VERSION=1.6.3 nightwatch -e safari",
     "test-chrome": "NIGHTWATCH_VERSION=1.6.3 nightwatch -e chrome",
-    "test-browserstack": "NIGHTWATCH_VERSION=1.6.3 nightwatch -e 'browserstack.chrome'"
+    "test-browserstack": "NIGHTWATCH_VERSION=1.6.3 nightwatch -e browserstack.chrome,browserstack.firefox,browserstack.ie,browserstack.ie"
   },
   "author": "Andrei Rusu <andrei@pineview.io>",
   "license": "MIT",
   "dependencies": {
     "chromedriver": "*",
     "cross-env": "*",
-    "dotenv": "*",
     "geckodriver": "*",
     "nightwatch": "*",
     "request": "*"
