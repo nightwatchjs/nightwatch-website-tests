@@ -140,8 +140,8 @@ module.exports = {
         build: 'nightwatch-website-test',
         'bstack:options': {
           local: 'false',
-          userName: process.env.BROWSERSTACK_USER || '${BROWSERSTACK_USER}',
-          accessKey: process.env.BROWSERSTACK_KEY || '${BROWSERSTACK_KEY}',
+          userName: '${BROWSERSTACK_USER}',
+          accessKey: '${BROWSERSTACK_KEY}',
         },
       },
 
