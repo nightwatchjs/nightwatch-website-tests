@@ -1,4 +1,5 @@
 module.exports = {
+  '@tags': ['vaibhav'],
   before(client) {
     this.homepage = client.page.home();
   },
@@ -10,12 +11,19 @@ module.exports = {
 
   'check if version dropdown is enabled and contains the correct version': function (client) {
     const navigation = this.homepage.section.navigation;
-    const navbarHeader = navigation.section.navbarHeader;
+    const navbarHeader = this.homepage.section.navbarHeader;
 
     // TODO: fix page object related issues
-    client.expect.element({ selector: '.nav-item.dropdown', index: 1 }).to.be.visible;
-    // client.expect.element('@versionDropdown').to.be.enabled;
-    // navbarHeader.expect.element('@versionDropdownOption:first-child').text.to.equal(client.globals.nightwatchVersion);
+    this.homepage.expect.section('@navbarHeader').to.be.enabled;
+    navbarHeader.expect.element('@versionDropdown').to.be.enabled;
+    navbarHeader.expect.element('@versionDropdownOption').to.be.enabled;
+    navbarHeader.getText('css selector', '@versionDropdown', (res) => console.log(res));
+
+    // navbarHeader.click('@versionDropdown');
+    // this.homepage.expect.section('@navbarHeader').to.be.visible;
+    // navbarHeader.expect.element('@versionDropdown').to.be.enabled;
+    // navbarHeader.expect.element('@versionDropdownOption').to.be.enabled;
+    // navbarHeader.expect.element('.nav-item.dropdown').text.to.equal(client.globals.nightwatchVersion);
   },
 
   after(client) {
