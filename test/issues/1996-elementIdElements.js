@@ -1,5 +1,4 @@
 module.exports = {
-  '@tags': ['vaibhav'],
   before(client) {
     this.homepage = client.page.home();
   },

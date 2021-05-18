@@ -13,7 +13,7 @@ module.exports = {
       apiMethod: 'clearValue'
     });
 
-    client.pause(1000).expect.title().to.startWith('clearValue');
+    client.expect.title().to.startWith('clearValue');
 
     this.apiMethodPage.section.container.expect.element('@header').text.to.contain('.clearValue()');
   },
