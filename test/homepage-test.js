@@ -1,5 +1,4 @@
 module.exports = {
-  '@tags': ['vaibhav'],
   before(client) {
     this.homepage = client.page.home();
   },
@@ -15,6 +14,7 @@ module.exports = {
     this.homepage.expect.section('@navbarHeader').to.be.enabled;
     navbarHeader.expect.element('@versionDropdown').to.be.visible;
     navbarHeader.expect.element('@versionDropdown').text.to.equal('1.6.2');
+    navbarHeader.expect.elements('@versionDropdownOption').count.to.equal(5);
   },
 
   after(client) {

@@ -10,16 +10,16 @@ module.exports = {
   },
 
   // TODO: fix safari case failing
-  // 'demo switch window and login form': function (browser) {
-  //   this.page.click('@openWindowBttn');
+  'demo switch window and login form': function (browser) {
+    this.page.click('@openWindowBttn');
 
-  //   browser.windowHandles(function (result) {
-  //     browser.assert.strictEqual(result.value.length, 2);
-  //     browser.switchWindow(result.value[1]);
-  //   });
+    browser.windowHandles(function (result) {
+      browser.assert.strictEqual(result.value.length, 2);
+      browser.switchWindow(result.value[1]);
+    });
 
-  //   this.page.login();
-  // },
+    this.page.login();
+  },
 
   after: (client) => client.end(),
 };
