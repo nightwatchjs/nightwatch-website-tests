@@ -1,4 +1,5 @@
 module.exports = {
+  '@tags': ['vaibhav'],
   before(client) {
     this.homepage = client.page.home();
   },
@@ -31,26 +32,27 @@ module.exports = {
 
     let key = Object.keys(dropdownResult.value)[0];
 
-    client.assert.ok(
-      key in dropdownResult.value,
-      `The Webdriver Element Id ${client.WEBDRIVER_ELEMENT_ID} is found in the dropdown result`
-    );
+    client.assert.ok(key in dropdownResult.value, `The Webdriver Element Id ${key} is found in the dropdown result`);
   },
 
   // TODO:: Fix after fixing page object
-  // 'check if elementIdElements works as expected on page objects': async function () {
-  //   const navigation = this.homepage.section.navigation;
-  //   const navbarHeader = navigation.section.navbarHeader;
+  // 'check if elementIdElements works as expected on page objects': async function (client) {
+  //   const navbarHeader = this.homepage.section.navbarHeader;
 
-  //   const result = await navbarHeader.api.elementIdElements('@versionDropdown', 'css selector', 'option');
+  //   navbarHeader.source((res) => console.log(res));
+  //   const result = await navbarHeader.api.elementIdElements(
+  //     '@versionDropdown',
+  //     'css selector',
+  //     'a',
+  //     (res) => console.log(res)
+  //   );
   //   navbarHeader.assert.equal(result.value.length, 2, 'There are two option elements in the drop down');
   // },
 
   // 'check if elementIdElement (single) works as expected on page objects': async function (client) {
-  //   const navigation = this.homepage.section.navigation;
-  //   const navbarHeader = navigation.section.navbarHeader;
+  //   const navbarHeader = this.homepage.section.navbarHeader;
 
-  //   const result = await navbarHeader.api.elementIdElement('@versionDropdown', 'css selector', 'option');
+  //   const result = await navbarHeader.api.elementIdElement('@versionDropdownOption', 'css selector', 'a');
   //   client.assert.ok(
   //     client.WEBDRIVER_ELEMENT_ID in result.value,
   //     `The Webdriver Element Id ${client.WEBDRIVER_ELEMENT_ID} is found in the result`
