@@ -10,7 +10,7 @@ module.exports = {
 
   'navigate to an individual api method page': function (client) {
     this.apiMethodPage.navigate({
-      apiMethod: 'clearValue',
+      apiMethod: 'clearValue'
     });
 
     client.pause(1000).expect.title().to.startWith('clearValue');
@@ -20,5 +20,5 @@ module.exports = {
 
   after(client) {
     client.end();
-  },
+  }
 };

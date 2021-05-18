@@ -21,5 +21,5 @@ module.exports = {
     this.page.login();
   },
 
-  after: (client) => client.end(),
+  after: (client) => client.end()
 };
