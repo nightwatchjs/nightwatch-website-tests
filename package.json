@@ -15,7 +15,7 @@
     "chromedriver": "*",
     "cross-env": "*",
     "geckodriver": "*",
-    "nightwatch": "*",
+    "nightwatch": "^1.6.4",
     "request": "*"
   }
 }
