@@ -27,7 +27,7 @@ module.exports = {
     cli_args: [
       // very verbose geckodriver logs
       // '-vv'
-    ],
+    ]
   },
 
   test_settings: {
@@ -38,36 +38,36 @@ module.exports = {
       screenshots: {
         enabled: false,
         path: 'screens',
-        on_failure: true,
+        on_failure: true
       },
 
       desiredCapabilities: {
-        browserName: 'firefox',
+        browserName: 'firefox'
       },
 
       webdriver: {
         start_process: true,
-        server_path: Services.geckodriver ? Services.geckodriver.path : '',
+        server_path: Services.geckodriver ? Services.geckodriver.path : ''
       },
 
       globals: {
         // NIGHTWATCH_VERSION is defined as an environment variable (.env files are supported also)
-        nightwatchVersion: '${NIGHTWATCH_VERSION}',
-      },
+        nightwatchVersion: '${NIGHTWATCH_VERSION}'
+      }
     },
 
     safari: {
       desiredCapabilities: {
         browserName: 'safari',
         alwaysMatch: {
-          acceptInsecureCerts: false,
-        },
+          acceptInsecureCerts: false
+        }
       },
       webdriver: {
         port: 4445,
         start_process: true,
-        server_path: '/usr/bin/safaridriver',
-      },
+        server_path: '/usr/bin/safaridriver'
+      }
     },
 
     firefox: {
@@ -80,9 +80,9 @@ module.exports = {
             args: [
               // '-headless',
               // '-verbose'
-            ],
-          },
-        },
+            ]
+          }
+        }
       },
       webdriver: {
         start_process: true,
@@ -91,8 +91,8 @@ module.exports = {
         cli_args: [
           // very verbose geckodriver logs
           // '-vv'
-        ],
-      },
+        ]
+      }
     },
 
     chrome: {
@@ -107,8 +107,8 @@ module.exports = {
             //'--ignore-certificate-errors',
             //'--allow-insecure-localhost',
             //'--headless'
-          ],
-        },
+          ]
+        }
       },
 
       webdriver: {
@@ -117,8 +117,8 @@ module.exports = {
         server_path: Services.chromedriver ? Services.chromedriver.path : '',
         cli_args: [
           // --verbose
-        ],
-      },
+        ]
+      }
     },
 
     //////////////////////////////////////////////////////////////////////////////////
@@ -132,23 +132,24 @@ module.exports = {
     browserstack: {
       selenium: {
         host: 'hub-cloud.browserstack.com',
-        port: 443,
+        port: 443
       },
       // More info on configuring capabilities can be found on:
       // https://www.browserstack.com/automate/capabilities?tag=selenium-4
       desiredCapabilities: {
+        build: 'nightwatch-website-test',
         'bstack:options': {
           local: 'false',
           userName: '${BROWSERSTACK_USER}',
-          accessKey: '${BROWSERSTACK_KEY}',
-        },
+          accessKey: '${BROWSERSTACK_KEY}'
+        }
       },
 
       disable_error_log: true,
       webdriver: {
         keep_alive: true,
-        start_process: false,
-      },
+        start_process: false
+      }
     },
 
     'browserstack.chrome': {
@@ -158,16 +159,16 @@ module.exports = {
         chromeOptions: {
           // This tells Chromedriver to run using the legacy JSONWire protocol
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
-          w3c: false,
-        },
-      },
+          w3c: false
+        }
+      }
     },
 
     'browserstack.firefox': {
       extends: 'browserstack',
       desiredCapabilities: {
-        browserName: 'firefox',
-      },
+        browserName: 'firefox'
+      }
     },
 
     'browserstack.ie': {
@@ -180,9 +181,24 @@ module.exports = {
           osVersion: '10',
           local: 'false',
           seleniumVersion: '3.5.2',
-          resolution: '1366x768',
-        },
-      },
+          resolution: '1366x768'
+        }
+      }
+    },
+
+    'browserstack.safari': {
+      extends: 'browserstack',
+      desiredCapabilities: {
+        browserName: 'Safari',
+        browserVersion: '14.0',
+        'bstack:options': {
+          os: 'OS X',
+          osVersion: 'Big Sur',
+          local: 'false',
+          seleniumVersion: '3.5.2',
+          resolution: '1366x768'
+        }
+      }
     },
 
     //////////////////////////////////////////////////////////////////////////////////
@@ -197,9 +213,9 @@ module.exports = {
         server_path: Services.seleniumServer ? Services.seleniumServer.path : '',
         cli_args: {
           'webdriver.gecko.driver': Services.geckodriver ? Services.geckodriver.path : '',
-          'webdriver.chrome.driver': Services.chromedriver ? Services.chromedriver.path : '',
-        },
-      },
+          'webdriver.chrome.driver': Services.chromedriver ? Services.chromedriver.path : ''
+        }
+      }
     },
 
     'selenium.chrome': {
@@ -207,9 +223,9 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
-          w3c: false,
-        },
-      },
+          w3c: false
+        }
+      }
     },
 
     'selenium.firefox': {
@@ -220,11 +236,11 @@ module.exports = {
           args: [
             // '-headless',
             // '-verbose'
-          ],
-        },
-      },
-    },
-  },
+          ]
+        }
+      }
+    }
+  }
 };
 
 function loadServices() {
